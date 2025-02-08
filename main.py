@@ -7,8 +7,8 @@ student_id = input("Enter Student ID: ")
 questions = fetch_questions(student_id)
 
 if questions:
-    print("\n🎯 Here are your questions:\n")
+    print("\nHere are your questions:\n")
     for idx, (question, filename) in enumerate(questions, start=1):
-        print(f"{idx}. {question}  [📖 Source: {filename}]")
+        print(f"{idx}. {question}  [Source: {filename}]")
 else:
-    print("⚠️ No questions found.")
+    print("No questions found.")

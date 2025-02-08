@@ -19,9 +19,9 @@ def create_db_connection():
             user=DB_USER,
             password=DB_PASSWORD,
             database=DB_NAME,
-            cursorclass=pymysql.cursors.DictCursor  # To get results as dictionaries
+            cursorclass=pymysql.cursors.DictCursor  # Get results as dictionaries
         )
         return conn
     except pymysql.MySQLError as err:
-        print(f"Database connection error: {err}")
+        print(f"Error: {err}")
         return None

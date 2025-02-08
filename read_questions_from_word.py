@@ -8,7 +8,7 @@ def read_questions_from_word(subject_name):
     file_path = os.path.join(base_path, file_name)
 
     if not os.path.exists(file_path):
-        print(f"⚠️ Warning: File '{file_name}' not found!")  
+        print(f"Error: File '{file_name}' not found!")  
         return []
 
     doc = Document(file_path)
