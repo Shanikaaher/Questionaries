@@ -1,8 +1,6 @@
-# db_connection.py
-
 import pymysql
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
@@ -25,5 +23,5 @@ def create_db_connection():
         )
         return conn
     except pymysql.MySQLError as err:
-        print(f"Error: {err}")
+        print(f"Database connection error: {err}")
         return None

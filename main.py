@@ -1,15 +1,14 @@
-# main.py
-from question_fetcher import get_student_interest
+from fetch_questions import fetch_questions
 
-# Example student_id
-student_id = 'S2025001'  # Replace with the actual student ID you want to check
+# Get student ID input
+student_id = input("Enter Student ID: ")
 
-# Fetch student interest based on student_id
-student_interest = get_student_interest(student_id)
+# Fetch and display questions with filenames
+questions = fetch_questions(student_id)
 
-# Check if a valid result is returned
-if student_interest:
-    print(f"Student ID: {student_interest['Student_id']}")
-    print(f"Computed Final Interests: {student_interest['Computed_Final_Interests']}")
+if questions:
+    print("\n🎯 Here are your questions:\n")
+    for idx, (question, filename) in enumerate(questions, start=1):
+        print(f"{idx}. {question}  [📖 Source: {filename}]")
 else:
-    print("No student found.")
+    print("⚠️ No questions found.")
